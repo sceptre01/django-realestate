@@ -1,0 +1,796 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Banner start -->
+<div class="banner" id="banner">
+    <div id="bannerCarousole" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item banner-max-height active item-bg">
+                <img class="d-block w-100" src="{% static 'img/banner/banner-1.jpg'%}" alt="banner">
+                <div class="carousel-caption banner-slider-inner h-100"></div>
+            </div>
+            <div class="carousel-item banner-max-height item-bg">
+                <img class="d-block w-100" src="{% static 'img/banner/banner-2.jpg'%}" alt="banner">
+                <div class="carousel-caption banner-slider-inner h-100"></div>
+            </div>
+            <div class="carousel-item banner-max-height item-bg">
+                <img class="d-block w-100" src="{% static 'img/banner/banner-3.jpg'%}" alt="banner">
+                <div class="carousel-caption banner-slider-inner h-100"></div>
+            </div>
+            <div class="carousel-item banner-max-height item-bg">
+                <img class="d-block w-100" src="{% static 'img/banner/banner-4.jpg'%}" alt="banner">
+                <div class="carousel-caption banner-slider-inner h-100"></div>
+            </div>
+            <div class="carousel-caption d-flex h-100 banner-slider-inner-2">
+                <div class="carousel-content container">
+                    <div class="text-center bi-3">
+                        <div class="clearfix">
+                            <h3 class="text-uppercase">Find Your Property</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="inline-search-area isa-4 clearfix">
+                            <div class="row">
+                                <div class="col-xl-2 col-lg-2 col-sm-4 col-6 search-col">
+                                    <select class="selectpicker search-fields" name="any-status">
+                                        <option>Any Status</option>
+                                        <option>For Rent</option>
+                                        <option>For Sale</option>
+                                    </select>
+                                </div>
+                                <div class="col-xl-2 col-lg-2 col-sm-4 col-6 search-col">
+                                    <select class="selectpicker search-fields" name="all-type">
+                                        <option>All Type</option>
+                                        <option>Apartments</option>
+                                        <option>Shop</option>
+                                        <option>Restaurant</option>
+                                        <option>Villa</option>
+                                    </select>
+                                </div>
+                                <div class="col-xl-2 col-lg-2 col-sm-4 col-6 search-col">
+                                    <select class="selectpicker search-fields" name="bedrooms">
+                                        <option>Bedrooms</option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                    </select>
+                                </div>
+                                <div class="col-xl-2 col-lg-2 col-sm-4 col-6 search-col">
+                                    <select class="selectpicker search-fields" name="bathrooms">
+                                        <option>Bathrooms</option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                    </select>
+                                </div>
+                                <div class="col-xl-2 col-lg-2 col-sm-4 col-6 search-col">
+                                    <select class="selectpicker search-fields" name="location">
+                                        <option>location</option>
+                                        <option>United States</option>
+                                        <option>American Samoa</option>
+                                        <option>Belgium</option>
+                                        <option>Canada</option>
+                                    </select>
+                                </div>
+                                <div class="col-xl-2 col-lg-2 col-sm-4 col-6 search-col">
+                                    <button class="btn button-theme btn-search btn-block">
+                                        <i class="fa fa-search"></i><strong>Find</strong>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="inline-search-area isa-3 clearfix">
+                            <div class="row clearfix">
+                                <div class="col-md-6 col-sm-6 col-6">
+                                    <select class="selectpicker search-fields" name="any-status">
+                                        <option>Any Status</option>
+                                        <option>For Rent</option>
+                                        <option>For Sale</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-6">
+                                    <select class="selectpicker search-fields" name="all-type">
+                                        <option>All Type</option>
+                                        <option>Apartments</option>
+                                        <option>Shop</option>
+                                        <option>Restaurant</option>
+                                        <option>Villa</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-6">
+                                    <select class="selectpicker search-fields" name="bedrooms">
+                                        <option>Bedrooms</option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-6">
+                                    <select class="selectpicker search-fields" name="bathrooms">
+                                        <option>Bathrooms</option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-6">
+                                    <select class="selectpicker search-fields mb-0" name="location">
+                                        <option>location</option>
+                                        <option>United States</option>
+                                        <option>American Samoa</option>
+                                        <option>Belgium</option>
+                                        <option>Canada</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-6">
+                                    <button class="btn button-theme btn-search btn-block mb-0">
+                                        <i class="fa fa-search"></i><strong>Find</strong>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#bannerCarousole" role="button" data-slide="prev">
+            <span class="slider-mover-left clip-home" aria-hidden="true">
+                <i class="fa fa-angle-left"></i>
+            </span>
+        </a>
+        <a class="carousel-control-next" href="#bannerCarousole" role="button" data-slide="next">
+            <span class="slider-mover-right clip-home" aria-hidden="true">
+                <i class="fa fa-angle-right"></i>
+            </span>
+        </a>
+    </div>
+</div>
+
+<!-- Search Section start -->
+<div class="search-section search-area pb-hediin-12 bg-grea animated fadeInDown" id="search-style-1">
+    <div class="container">
+        <div class="search-section-area">
+            <div class="search-area-inner">
+                <div class="search-contents">
+                    <form method="GET">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-6 col-sm-6 col-6">
+                                <div class="form-group">
+                                    <select class="selectpicker search-fields" name="any-status">
+                                        <option>Any Status</option>
+                                        <option>For Rent</option>
+                                        <option>For Sale</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-6 col-6">
+                                <div class="form-group">
+                                    <select class="selectpicker search-fields" name="all-type">
+                                        <option>All Type</option>
+                                        <option>Apartments</option>
+                                        <option>Shop</option>
+                                        <option>Restaurant</option>
+                                        <option>Villa</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-6 col-6">
+                                <div class="form-group">
+                                    <select class="selectpicker search-fields" name="bedrooms">
+                                        <option>Bedrooms</option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-6 col-6">
+                                <div class="form-group">
+                                    <select class="selectpicker search-fields" name="bathrooms">
+                                        <option>Bathrooms</option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-6 col-6">
+                                <div class="form-group">
+                                    <select class="selectpicker search-fields" name="location">
+                                        <option>location</option>
+                                        <option>United States</option>
+                                        <option>American Samoa</option>
+                                        <option>Belgium</option>
+                                        <option>Canada</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-6 col-6">
+                                <div class="form-group">
+                                    <button class="search-button">Search</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Search Section end -->
+
+<!-- Featured Properties start -->
+<div class="featured-properties content-area">
+    <div class="container">
+        <!-- Main title -->
+        <div class="main-title">
+            <h1>Featured Properties</h1>
+            <p>Find your properties in your city</p>
+        </div>
+        <!-- Slick slider area start -->
+        <div class="slick-slider-area">
+            <div class="row slick-carousel" data-slick='{"slidesToShow": 3, "responsive":[{"breakpoint": 1024,"settings":{"slidesToShow": 2}}, {"breakpoint": 768,"settings":{"slidesToShow": 1}}]}'>
+                <div class="slick-slide-item">
+                    <div class="property-box">
+                        <div class="property-thumbnail">
+                            <a href="properties-details.html" class="property-img">
+                                <div class="listing-badges">
+                                    <span class="featured">Featured</span>
+                                </div>
+                                <div class="price-box"><span>$850.00</span> Per month</div>
+                                <img class="d-block w-100" src="{% static 'img/properties/properties-1.jpg' %}" alt="properties">
+                            </a>
+                        </div>
+                        <div class="detail">
+                            <h1 class="title">
+                                <a href="properties-details.html">Modern Family Home</a>
+                            </h1>
+
+                            <div class="location">
+                                <a href="properties-details.html">
+                                    <i class="flaticon-pin"></i>123 Kathal St. Tampa City,
+                                </a>
+                            </div>
+                        </div>
+                        <ul class="facilities-list clearfix">
+                            <li>
+                                <span>Area</span>3600 Sqft
+                            </li>
+                            <li>
+                                <span>Beds</span> 3
+                            </li>
+                            <li>
+                                <span>Baths</span> 2
+                            </li>
+                            <li>
+                                <span>Garage</span> 1
+                            </li>
+                        </ul>
+                        <div class="footer">
+                            <a href="#">
+                                <i class="flaticon-male"></i>Jhon Doe
+                            </a>
+                            <span>
+                                <i class="flaticon-calendar"></i>5 Days ago
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="slick-slide-item">
+                    <div class="property-box">
+                        <div class="property-thumbnail">
+                            <a href="properties-details.html" class="property-img">
+                                <div class="listing-badges">
+                                    <span class="featured">Featured</span>
+                                </div>
+                                <div class="price-box"><span>$850.00</span> Per month</div>
+                                <img class="d-block w-100" src="{% static 'img/properties/properties-2.jpg'%}" alt="properties">
+                            </a>
+                        </div>
+                        <div class="detail">
+                            <h1 class="title">
+                                <a href="properties-details.html">Two storey modern flat</a>
+                            </h1>
+
+                            <div class="location">
+                                <a href="properties-details.html">
+                                    <i class="flaticon-pin"></i>123 Kathal St. Tampa City,
+                                </a>
+                            </div>
+                        </div>
+                        <ul class="facilities-list clearfix">
+                            <li>
+                                <span>Area</span>3600 Sqft
+                            </li>
+                            <li>
+                                <span>Beds</span> 3
+                            </li>
+                            <li>
+                                <span>Baths</span> 2
+                            </li>
+                            <li>
+                                <span>Garage</span> 1
+                            </li>
+                        </ul>
+                        <div class="footer">
+                            <a href="#">
+                                <i class="flaticon-male"></i>Jhon Doe
+                            </a>
+                            <span>
+                                <i class="flaticon-calendar"></i>5 Days ago
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="slick-slide-item">
+                    <div class="property-box">
+                        <div class="property-thumbnail">
+                            <a href="properties-details.html" class="property-img">
+                                <div class="listing-badges">
+                                    <span class="featured">Featured</span>
+                                </div>
+                                <div class="price-box"><span>$850.00</span> Per month</div>
+                                <img class="d-block w-100" src="{% static 'img/properties/properties-3.jpg' %}" alt="properties">
+                            </a>
+                        </div>
+                        <div class="detail">
+                            <h1 class="title">
+                                <a href="properties-details.html">Luxury Villa</a>
+                            </h1>
+
+                            <div class="location">
+                                <a href="properties-details.html">
+                                    <i class="flaticon-pin"></i>123 Kathal St. Tampa City,
+                                </a>
+                            </div>
+                        </div>
+                        <ul class="facilities-list clearfix">
+                            <li>
+                                <span>Area</span>3600 Sqft
+                            </li>
+                            <li>
+                                <span>Beds</span> 3
+                            </li>
+                            <li>
+                                <span>Baths</span> 2
+                            </li>
+                            <li>
+                                <span>Garage</span> 1
+                            </li>
+                        </ul>
+                        <div class="footer">
+                            <a href="#">
+                                <i class="flaticon-male"></i>Jhon Doe
+                            </a>
+                            <span>
+                                <i class="flaticon-calendar"></i>5 Days ago
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="slick-slide-item">
+                    <div class="property-box">
+                        <div class="property-thumbnail">
+                            <a href="properties-details.html" class="property-img">
+                                <div class="listing-badges">
+                                    <span class="featured">Featured</span>
+                                </div>
+                                <div class="price-box"><span>$850.00</span> Per month</div>
+                                <img class="d-block w-100" src="{% static 'img/properties/properties-4.jpg'%}" alt="properties">
+                            </a>
+                        </div>
+                        <div class="detail">
+                            <h1 class="title">
+                                <a href="properties-details.html">Modern Family Home</a>
+                            </h1>
+
+                            <div class="location">
+                                <a href="properties-details.html">
+                                    <i class="flaticon-pin"></i>123 Kathal St. Tampa City,
+                                </a>
+                            </div>
+                        </div>
+                        <ul class="facilities-list clearfix">
+                            <li>
+                                <span>Area</span>3600 Sqft
+                            </li>
+                            <li>
+                                <span>Beds</span> 3
+                            </li>
+                            <li>
+                                <span>Baths</span> 2
+                            </li>
+                            <li>
+                                <span>Garage</span> 1
+                            </li>
+                        </ul>
+                        <div class="footer">
+                            <a href="#">
+                                <i class="flaticon-male"></i>Jhon Doe
+                            </a>
+                            <span>
+                                <i class="flaticon-calendar"></i>5 Days ago
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="slick-slide-item">
+                    <div class="property-box">
+                        <div class="property-thumbnail">
+                            <a href="properties-details.html" class="property-img">
+                                <div class="listing-badges">
+                                    <span class="featured">Featured</span>
+                                </div>
+                                <div class="price-box"><span>$850.00</span> Per month</div>
+                                <img class="d-block w-100" src="{% static 'img/properties/properties-5.jpg'%}" alt="properties">
+                            </a>
+                        </div>
+                        <div class="detail">
+                            <h1 class="title">
+                                <a href="properties-details.html">Relaxing Apartment</a>
+                            </h1>
+
+                            <div class="location">
+                                <a href="properties-details.html">
+                                    <i class="flaticon-pin"></i>123 Kathal St. Tampa City,
+                                </a>
+                            </div>
+                        </div>
+                        <ul class="facilities-list clearfix">
+                            <li>
+                                <span>Area</span>3600 Sqft
+                            </li>
+                            <li>
+                                <span>Beds</span> 3
+                            </li>
+                            <li>
+                                <span>Baths</span> 2
+                            </li>
+                            <li>
+                                <span>Garage</span> 1
+                            </li>
+                        </ul>
+                        <div class="footer">
+                            <a href="#">
+                                <i class="flaticon-male"></i>Jhon Doe
+                            </a>
+                            <span>
+                                <i class="flaticon-calendar"></i>5 Days ago
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="slick-slide-item">
+                    <div class="property-box">
+                        <div class="property-thumbnail">
+                            <a href="properties-details.html" class="property-img">
+                                <div class="listing-badges">
+                                    <span class="featured">Featured</span>
+                                </div>
+                                <div class="price-box"><span>$850.00</span> Per month</div>
+                                <img class="d-block w-100" src="{% static 'img/properties/properties-6.jpg'%}" alt="properties">
+                            </a>
+                        </div>
+                        <div class="detail">
+                            <h1 class="title">
+                                <a href="properties-details.html">Real Luxury Villa</a>
+                            </h1>
+
+                            <div class="location">
+                                <a href="properties-details.html">
+                                    <i class="flaticon-pin"></i>123 Kathal St. Tampa City,
+                                </a>
+                            </div>
+                        </div>
+                        <ul class="facilities-list clearfix">
+                            <li>
+                                <span>Area</span>3600 Sqft
+                            </li>
+                            <li>
+                                <span>Beds</span> 3
+                            </li>
+                            <li>
+                                <span>Baths</span> 2
+                            </li>
+                            <li>
+                                <span>Garage</span> 1
+                            </li>
+                        </ul>
+                        <div class="footer">
+                            <a href="#">
+                                <i class="flaticon-male"></i>Jhon Doe
+                            </a>
+                            <span>
+                                <i class="flaticon-calendar"></i>5 Days ago
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slick-prev slick-arrow-buton clip-home">
+                <i class="fa fa-angle-left"></i>
+            </div>
+            <div class="slick-next slick-arrow-buton clip-home">
+                <i class="fa fa-angle-right"></i>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Featured Properties end -->
+
+<!-- Services start -->
+<div class="services content-area bg-grea-3">
+    <div class="container">
+        <!-- Main title -->
+        <div class="main-title text-center">
+            <h1>Working with the RTS</h1>
+            <p>Who you work with matters</p>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-12">
+                <div class="service-info">
+                    <div class="icon i1">
+                        <i class="flaticon-user"></i>
+                    </div>
+                    <h3>Personalized Service</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-12">
+                <div class="service-info">
+                    <div class="icon i2">
+                        <i class="flaticon-empire-state-building"></i>
+                    </div>
+                    <h3>Luxury Real Estate Experts</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-12">
+                <div class="service-info">
+                    <div class="icon i3">
+                        <i class="flaticon-discount"></i>
+                    </div>
+                    <h3>Modern Building For Rent $ Sell</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Services end -->
+
+<!-- Counters 2 strat -->
+<div class="counters-2 overview-bgi">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="media counter-box">
+                    <div class="icon">
+                        <i class="flaticon-sale"></i>
+                    </div>
+                    <div class="media-body align-self-center">
+                        <h2 class="counter Starting">967</h2>
+                        <p>Listings For Sale</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="media counter-box">
+                    <div class="icon">
+                        <i class="flaticon-rent"></i>
+                    </div>
+                    <div class="media-body align-self-center">
+                        <h2 class="counter Starting">967</h2>
+                        <p>Listings For Rent</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="media counter-box">
+                    <div class="icon">
+                        <i class="flaticon-user"></i>
+                    </div>
+                    <div class="media-body align-self-center">
+                        <h2 class="counter Starting">967</h2>
+                        <p>Agents</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="media counter-box">
+                    <div class="icon">
+                        <i class="flaticon-broker"></i>
+                    </div>
+                    <div class="media-body align-self-center">
+                        <h2 class="counter Starting">967</h2>
+                        <p>Brokers</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Counters 2 end -->
+
+<!-- Our team start -->
+<div class="our-team content-area">
+    <div class="container">
+        <!-- Main title -->
+        <div class="main-title">
+            <h1>Our Agent</h1>
+            <p>We have professional agents</p>
+        </div>
+        <!-- Slick slider area start -->
+        <div class="slick-slider-area">
+            <div class="row slick-carousel" data-slick='{"slidesToShow": 2, "responsive":[{"breakpoint": 1024,"settings":{"slidesToShow": 2}}, {"breakpoint": 768,"settings":{"slidesToShow": 1}}]}'>
+                <div class="slick-slide-item">
+                    <div class="row team-2">
+                        <div class="col-xl-5 col-lg-6 col-md-12 col-sm-12 col-pad clip-home">
+                            <div class="photo clip-home">
+                                <img src="{% static 'img/avatar/avatar-10.jpg' %}" alt="avatar-10" class="img-fluid">
+                            </div>
+                        </div>
+                        <div class="col-xl-7 col-lg-6 col-md-12 col-sm-12 col-pad bg align-self-center">
+                            <div class="detail">
+                                <h4>
+                                    <a href="agent-detail.html">Karen Paran</a>
+                                </h4>
+                                <h5>Office Manager</h5>
+                                <div class="contact">
+                                    <ul>
+                                        <li>
+                                            <i class="flaticon-pin"></i><a>44 New Design Street,</a>
+                                        </li>
+                                        <li>
+                                            <i class="flaticon-mail"></i><a href="mailto:info@themevessel.com">info@themevessel.com</a>
+                                        </li>
+                                        <li>
+                                            <i class="flaticon-phone"></i><a href="tel:+554XX-634-7071"> +55 4XX-634-7071</a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <ul class="social-list clearfix">
+                                    <li><a href="#" class="facebook-bg"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="#" class="twitter-bg"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="#" class="google-bg"><i class="fa fa-google-plus"></i></a></li>
+                                    <li><a href="#" class="linkedin-bg"><i class="fa fa-linkedin"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slick-slide-item">
+                    <div class="row team-2">
+                        <div class="col-xl-5 col-lg-6 col-md-12 col-sm-12 col-pad">
+                            <div class="photo clip-home">
+                                <img src="{% static 'img/avatar/avatar-9.jpg'%}" alt="avatar-9" class="img-fluid">
+                            </div>
+                        </div>
+                        <div class="col-xl-7 col-lg-6 col-md-12 col-sm-12 col-pad bg align-self-center">
+                            <div class="detail">
+                                <h4>
+                                    <a href="agent-detail.html">Eliane Pereira</a>
+                                </h4>
+                                <h5>Creative Director</h5>
+                                <div class="contact">
+                                    <ul>
+                                        <li>
+                                            <i class="flaticon-pin"></i><a>44 New Design Street,</a>
+                                        </li>
+                                        <li>
+                                            <i class="flaticon-mail"></i><a href="mailto:info@themevessel.com">info@themevessel.com</a>
+                                        </li>
+                                        <li>
+                                            <i class="flaticon-phone"></i><a href="tel:+554XX-634-7071"> +55 4XX-634-7071</a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <ul class="social-list clearfix">
+                                    <li><a href="#" class="facebook-bg"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="#" class="twitter-bg"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="#" class="google-bg"><i class="fa fa-google-plus"></i></a></li>
+                                    <li><a href="#" class="linkedin-bg"><i class="fa fa-linkedin"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slick-slide-item">
+                    <div class="row team-2">
+                        <div class="col-xl-5 col-lg-6 col-md-12 col-sm-12 col-pad">
+                            <div class="photo clip-home">
+                                <img src="{% static 'img/avatar/avatar-10.jpg'%}" alt="avatar-10" class="img-fluid">
+                            </div>
+                        </div>
+                        <div class="col-xl-7 col-lg-6 col-md-12 col-sm-12 col-pad bg align-self-center">
+                            <div class="detail">
+                                <h4>
+                                    <a href="agent-detail.html">Karen Paran</a>
+                                </h4>
+                                <h5>Office Manager</h5>
+                                <div class="contact">
+                                    <ul>
+                                        <li>
+                                            <i class="flaticon-pin"></i><a>44 New Design Street,</a>
+                                        </li>
+                                        <li>
+                                            <i class="flaticon-mail"></i><a href="mailto:info@themevessel.com">info@themevessel.com</a>
+                                        </li>
+                                        <li>
+                                            <i class="flaticon-phone"></i><a href="tel:+554XX-634-7071"> +55 4XX-634-7071</a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <ul class="social-list clearfix">
+                                    <li><a href="#" class="facebook-bg"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="#" class="twitter-bg"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="#" class="google-bg"><i class="fa fa-google-plus"></i></a></li>
+                                    <li><a href="#" class="linkedin-bg"><i class="fa fa-linkedin"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slick-slide-item">
+                    <div class="row team-2">
+                        <div class="col-xl-5 col-lg-6 col-md-12 col-sm-12 col-pad">
+                            <div class="photo clip-home">
+                                <img src="{% static 'img/avatar/avatar-9.jpg'%}" alt="avatar-9" class="img-fluid">
+                            </div>
+                        </div>
+                        <div class="col-xl-7 col-lg-6 col-md-12 col-sm-12 col-pad bg align-self-center">
+                            <div class="detail">
+                                <h4>
+                                    <a href="agent-detail.html">Eliane Pereira</a>
+                                </h4>
+                                <h5>Creative Director</h5>
+                                <div class="contact">
+                                    <ul>
+                                        <li>
+                                            <i class="flaticon-pin"></i><a>44 New Design Street,</a>
+                                        </li>
+                                        <li>
+                                            <i class="flaticon-mail"></i><a href="mailto:info@themevessel.com">info@themevessel.com</a>
+                                        </li>
+                                        <li>
+                                            <i class="flaticon-phone"></i><a href="tel:+554XX-634-7071"> +55 4XX-634-7071</a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <ul class="social-list clearfix">
+                                    <li><a href="#" class="facebook-bg"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="#" class="twitter-bg"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="#" class="google-bg"><i class="fa fa-google-plus"></i></a></li>
+                                    <li><a href="#" class="linkedin-bg"><i class="fa fa-linkedin"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slick-btn">
+                <div class="slick-prev slick-arrow-buton-2 sab-4">
+                    <i class="fa fa-angle-left"></i>
+                </div>
+                <div class="slick-next slick-arrow-buton-2 sab-3">
+                    <i class="fa fa-angle-right"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Our team end -->
+
+<!-- Banner end -->
+{% endblock %}
