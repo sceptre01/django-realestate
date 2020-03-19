@@ -1,0 +1,153 @@
+{% extends 'base.html' %}
+{% load humanize %}
+
+{% block content %}
+
+<!-- Sub banner start -->
+<div class="sub-banner">
+    <div class="container">
+        <div class="breadcrumb-area">
+            <h1>Properties Fullwidth</h1>
+            <ul class="breadcrumbs">
+                <li><a href="index.html">Home</a></li>
+                <li class="active">Properties Fullwidth</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- Sub Banner end -->
+
+<!-- Properties section body start -->
+<div class="properties-section-body content-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-xs-12">
+                <!-- Option bar start -->
+                <div class="option-bar d-none d-xl-block d-lg-block d-md-block d-sm-block">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-7 col-sm-7">
+                            <div class="sorting-options2">
+                                <span class="sort">Sort by:</span>
+                                <select class="selectpicker search-fields" name="default-order">
+                                    <option>Default Order</option>
+                                    <option>Price High to Low</option>
+                                    <option>Price: Low to High</option>
+                                    <option>Newest Properties</option>
+                                    <option>Oldest Properties</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-5 col-sm-5">
+                            <div class="sorting-options">
+                                <a href="properties-list-fullwidth.html" class="change-view-btn"><i class="fa fa-th-list"></i></a>
+                                <a href="properties-grid-fullwidth.html" class="change-view-btn active-view-btn"><i class="fa fa-th-large"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- grid properties start -->
+                <div class="row">
+                    {% if properties %}
+                        {% for property in properties %}
+                            <div class="col-lg-4 col-md-6 col-sm-12" >
+                                <div class="property-box">
+                                    <div class="property-thumbnail">
+                                        <a href="{% url 'property' property.id %}" class="property-img">
+                                            <div class="listing-badges">
+                                                <span class="featured">Featured</span>
+                                            </div>
+                                            <div class="price-box"><span>${{ property.price | intcomma}}</span></div>
+                                            <img class="d-block w-100" src="{{ property.photo_main.url }}" alt="properties">
+                                        </a>
+                                    </div>
+                                    <div class="detail">
+                                        <h1 class="title">
+                                            <a href="{% url 'property' property.id %}">{{ property.title }}</a>
+                                        </h1>
+
+                                        <div class="location">
+                                            <a href="{% url 'property' property.id %}">
+                                                <i class="flaticon-pin"></i>{{ property.address }}
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <ul class="facilities-list clearfix">
+                                        <li>
+                                            <span>Area</span>{{ property.sqft }}
+                                        </li>
+                                        <li>
+                                            <span>Beds</span> {{ property.bedrooms }}
+                                        </li>
+                                        <li>
+                                            <span>Baths</span> {{ property.bathrooms }}
+                                        </li>
+                                        <li>
+                                            <span>Garage</span> {{ property.garage }}
+                                        </li>
+                                    </ul>
+                                    <div class="footer">
+                                        <a href="#">
+                                            <i class="flaticon-male"></i>{{ property.agent }}
+                                        </a>
+                                        <span>
+                                        <i class="flaticon-calendar"></i> {{ property.list_date | timesince }}
+                                    </span>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}    
+                    {% else %}
+                        <div class="col-md-12">
+                            <p>No Properties Availabe</p>
+                        </div>
+                    {% endif %}
+
+                    
+                </div>
+                <!-- Page navigation start -->
+                <div class="pagination-box hidden-mb-45 text-center">
+                    <nav aria-label="Page navigation example">
+                        {% if properties.has_other_pages %}
+                            <ul class="pagination">
+                                {% if properties.has_previous %}
+                                    <li class="page-item">
+                                        <a class="page-link" href="?page={{properties.previous_page_number}}">Prev</a>
+                                    </li>           
+                                {% else %}
+                                    <li class="page-item disabled">
+                                        <a class="page-link">Prev</a>
+                                    </li>    
+                                {% endif %}
+                                
+                                {% for i in properties.paginator.page_range %}
+                                    {% if properties.number == i %}
+                                        <li class="page-item active">
+                                            <a class="page-link">{{i}}</a>
+                                        </li>
+                                    {% else %}
+                                        <li class="page-item">
+                                            <a href="?page={{i}}" class="page-link">{{i}}</a>
+                                        </li>    
+                                    {% endif %}
+                                {% endfor %}
+
+                                {% if properties.has_next %}
+                                    <li class="page-item">
+                                        <a class="page-link" href="?page={{properties.next_page_number}}">Next</a>
+                                    </li>           
+                                {% else %}
+                                    <li class="page-item disabled">
+                                        <a class="page-link">Next</a>
+                                    </li>    
+                                {% endif %}
+                            </ul>
+                        {% endif %}
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Properties section body end -->
+
+{% endblock %}
