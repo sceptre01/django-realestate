@@ -4,7 +4,7 @@
 <header class="main-header header-transparent sticky-header">
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light">
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="{% url 'index' %}">
                 <img src="{% static 'img/logos/logo.png' %}" alt="logo">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -13,30 +13,30 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item dropdown active">
-                        <a class="nav-link" href=""  aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link" href="{% url 'index' %}"  aria-haspopup="true" aria-expanded="false">
                             Home
                         </a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link " href="properties"  aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link " href="{% url 'properties' %}"  aria-haspopup="true" aria-expanded="false">
                             Properties
                         </a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link" href="agents" aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link" href="{% url 'agents' %}" aria-haspopup="true" aria-expanded="false">
                             Agents
                         </a>
                     </li>
                     <li class="nav-item dropdown megamenu-li">
-                        <a class="nav-link " href="about" aria-haspopup="true" aria-expanded="false">About</a>
+                        <a class="nav-link " href="{% url 'about' %}" aria-haspopup="true" aria-expanded="false">About</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link" href="faqs" aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link" href="{% url 'faqs' %}" aria-haspopup="true" aria-expanded="false">
                             Faqs
                         </a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link" href="contact" aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link" href="{% url 'contact' %}" aria-haspopup="true" aria-expanded="false">
                             Contact
                         </a>
                     </li>

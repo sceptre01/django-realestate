@@ -8,7 +8,7 @@
         <div class="breadcrumb-area">
             <h1>About Us</h1>
             <ul class="breadcrumbs">
-                <li><a href="index.html">Home</a></li>
+                <li><a href="{% url 'index' %}">Home</a></li>
                 <li class="active">About Us</li>
             </ul>
         </div>
@@ -73,160 +73,62 @@
         <!-- Slick slider area start -->
         <div class="slick-slider-area">
             <div class="row slick-carousel" data-slick='{"slidesToShow": 2, "responsive":[{"breakpoint": 1024,"settings":{"slidesToShow": 2}}, {"breakpoint": 768,"settings":{"slidesToShow": 1}}]}'>
-                <div class="slick-slide-item">
-                    <div class="row team-2">
-                        <div class="col-xl-5 col-lg-6 col-md-12 col-sm-12 col-pad clip-home">
-                            <div class="photo clip-home">
-                                <img src="{% static 'img/avatar/avatar-10.jpg'%}" alt="avatar-10" class="img-fluid">
-                            </div>
-                        </div>
-                        <div class="col-xl-7 col-lg-6 col-md-12 col-sm-12 col-pad bg align-self-center">
-                            <div class="detail">
-                                <h4>
-                                    <a href="agent-detail.html">Karen Paran</a>
-                                </h4>
-                                <h5>Office Manager</h5>
-                                <div class="contact">
-                                    <ul>
-                                        <li>
-                                            <i class="flaticon-pin"></i><a>44 New Design Street,</a>
-                                        </li>
-                                        <li>
-                                            <i class="flaticon-mail"></i><a href="mailto:info@themevessel.com">info@themevessel.com</a>
-                                        </li>
-                                        <li>
-                                            <i class="flaticon-phone"></i><a href="tel:+554XX-634-7071"> +55 4XX-634-7071</a>
-                                        </li>
-                                    </ul>
+               {% if agents %}
+                    {% for agent in agents %}
+                        <div class="slick-slide-item">
+                            <div class="row team-2">
+                                <div class="col-xl-5 col-lg-6 col-md-12 col-sm-12 col-pad clip-home">
+                                    <div class="photo clip-home">
+                                        <img src="{{ agent.photo.url }}" alt="" class="img-fluid">
+                                    </div>
                                 </div>
-
-                                <ul class="social-list clearfix">
-                                    <li><a href="#" class="facebook-bg"><i class="fa fa-facebook"></i></a></li>
-                                    <li><a href="#" class="twitter-bg"><i class="fa fa-twitter"></i></a></li>
-                                    <li><a href="#" class="google-bg"><i class="fa fa-google-plus"></i></a></li>
-                                    <li><a href="#" class="linkedin-bg"><i class="fa fa-linkedin"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="slick-slide-item">
-                    <div class="row team-2">
-                        <div class="col-xl-5 col-lg-6 col-md-12 col-sm-12 col-pad">
-                            <div class="photo clip-home">
-                                <img src="{% static 'img/avatar/avatar-9.jpg'%}" alt="avatar-9" class="img-fluid">
-                            </div>
-                        </div>
-                        <div class="col-xl-7 col-lg-6 col-md-12 col-sm-12 col-pad bg align-self-center">
-                            <div class="detail">
-                                <h4>
-                                    <a href="agent-detail.html">Eliane Pereira</a>
-                                </h4>
-                                <h5>Creative Director</h5>
-                                <div class="contact">
-                                    <ul>
-                                        <li>
-                                            <i class="flaticon-pin"></i><a>44 New Design Street,</a>
-                                        </li>
-                                        <li>
-                                            <i class="flaticon-mail"></i><a href="mailto:info@themevessel.com">info@themevessel.com</a>
-                                        </li>
-                                        <li>
-                                            <i class="flaticon-phone"></i><a href="tel:+554XX-634-7071"> +55 4XX-634-7071</a>
-                                        </li>
-                                    </ul>
+                                <div class="col-xl-7 col-lg-6 col-md-12 col-sm-12 col-pad bg align-self-center">
+                                    <div class="detail">
+                                        <h4>
+                                            <a href="{% url 'agent' agent.id %}">{{agent.name}}</a>
+                                        </h4>
+                                        <h5>{{agent.occupation}}</h5>
+                                        <div class="contact">
+                                            <ul>
+                                                <li>
+                                                    <i class="flaticon-pin"></i><a>{{agent.address}}</a>
+                                                </li>
+                                                <li>
+                                                    <i class="flaticon-mail"></i><a href="mailto:{{agent.email}}">{{agent.email}}</a>
+                                                </li>
+                                                <li>
+                                                    <i class="flaticon-phone"></i><a href="tel:+{{agent.phone}}"> +{{agent.phone}}</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+        
+                                        <ul class="social-list clearfix">
+                                            <li><a href="{{agent.facebook}}" class="facebook-bg"><i class="fa fa-facebook"></i></a></li>
+                                            <li><a href="{{agent.twitter}}" class="twitter-bg"><i class="fa fa-twitter"></i></a></li>
+                                            <li><a href="{{agent.google}}" class="google-bg"><i class="fa fa-google-plus"></i></a></li>
+                                            <li><a href="{{agent.linkedin}}" class="linkedin-bg"><i class="fa fa-linkedin"></i></a></li>
+                                        </ul>
+                                    </div>
                                 </div>
-
-                                <ul class="social-list clearfix">
-                                    <li><a href="#" class="facebook-bg"><i class="fa fa-facebook"></i></a></li>
-                                    <li><a href="#" class="twitter-bg"><i class="fa fa-twitter"></i></a></li>
-                                    <li><a href="#" class="google-bg"><i class="fa fa-google-plus"></i></a></li>
-                                    <li><a href="#" class="linkedin-bg"><i class="fa fa-linkedin"></i></a></li>
-                                </ul>
                             </div>
                         </div>
+                    {% endfor %}
+               {% else %}
+                    <div class="col md-12">
+                        <p>No Agents Available</p>
                     </div>
-                </div>
-                <div class="slick-slide-item">
-                    <div class="row team-2">
-                        <div class="col-xl-5 col-lg-6 col-md-12 col-sm-12 col-pad">
-                            <div class="photo clip-home">
-                                <img src="{% static 'img/avatar/avatar-10.jpg'%}" alt="avatar-10" class="img-fluid">
-                            </div>
-                        </div>
-                        <div class="col-xl-7 col-lg-6 col-md-12 col-sm-12 col-pad bg align-self-center">
-                            <div class="detail">
-                                <h4>
-                                    <a href="agent-detail.html">Karen Paran</a>
-                                </h4>
-                                <h5>Office Manager</h5>
-                                <div class="contact">
-                                    <ul>
-                                        <li>
-                                            <i class="flaticon-pin"></i><a>44 New Design Street,</a>
-                                        </li>
-                                        <li>
-                                            <i class="flaticon-mail"></i><a href="mailto:info@themevessel.com">info@themevessel.com</a>
-                                        </li>
-                                        <li>
-                                            <i class="flaticon-phone"></i><a href="tel:+554XX-634-7071"> +55 4XX-634-7071</a>
-                                        </li>
-                                    </ul>
-                                </div>
-
-                                <ul class="social-list clearfix">
-                                    <li><a href="#" class="facebook-bg"><i class="fa fa-facebook"></i></a></li>
-                                    <li><a href="#" class="twitter-bg"><i class="fa fa-twitter"></i></a></li>
-                                    <li><a href="#" class="google-bg"><i class="fa fa-google-plus"></i></a></li>
-                                    <li><a href="#" class="linkedin-bg"><i class="fa fa-linkedin"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="slick-slide-item">
-                    <div class="row team-2">
-                        <div class="col-xl-5 col-lg-6 col-md-12 col-sm-12 col-pad">
-                            <div class="photo clip-home">
-                                <img src="{% static 'img/avatar/avatar-9.jpg'%}" alt="avatar-9" class="img-fluid">
-                            </div>
-                        </div>
-                        <div class="col-xl-7 col-lg-6 col-md-12 col-sm-12 col-pad bg align-self-center">
-                            <div class="detail">
-                                <h4>
-                                    <a href="agent-detail.html">Eliane Pereira</a>
-                                </h4>
-                                <h5>Creative Director</h5>
-                                <div class="contact">
-                                    <ul>
-                                        <li>
-                                            <i class="flaticon-pin"></i><a>44 New Design Street,</a>
-                                        </li>
-                                        <li>
-                                            <i class="flaticon-mail"></i><a href="mailto:info@themevessel.com">info@themevessel.com</a>
-                                        </li>
-                                        <li>
-                                            <i class="flaticon-phone"></i><a href="tel:+554XX-634-7071"> +55 4XX-634-7071</a>
-                                        </li>
-                                    </ul>
-                                </div>
-
-                                <ul class="social-list clearfix">
-                                    <li><a href="#" class="facebook-bg"><i class="fa fa-facebook"></i></a></li>
-                                    <li><a href="#" class="twitter-bg"><i class="fa fa-twitter"></i></a></li>
-                                    <li><a href="#" class="google-bg"><i class="fa fa-google-plus"></i></a></li>
-                                    <li><a href="#" class="linkedin-bg"><i class="fa fa-linkedin"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+               {% endif %}
+               
+                
+               
             </div>
-            <div class="slick-prev slick-arrow-buton">
-                <i class="fa fa-angle-left"></i>
-            </div>
-            <div class="slick-next slick-arrow-buton">
-                <i class="fa fa-angle-right"></i>
+            <div class="slick-btn">
+                <div class="slick-prev slick-arrow-buton-2 sab-4">
+                    <i class="fa fa-angle-left"></i>
+                </div>
+                <div class="slick-next slick-arrow-buton-2 sab-3">
+                    <i class="fa fa-angle-right"></i>
+                </div>
             </div>
         </div>
     </div>
@@ -341,7 +243,7 @@
                 <!-- Contact 1 end -->
             </div>
             <div class="offset-xl-1 col-xl-5 col-lg-6">
-                <img src="{% static 'img/avatar/avatar-10.png" alt="avatar-10" class="img-fluid">
+                <img src="{% static 'img/avatar/avatar-10.png'%}" alt="avatar-10" class="img-fluid">
             </div>
         </div>
     </div>

@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- Sub banner start -->
+<div class="sub-banner">
+    <div class="container">
+        <div class="breadcrumb-area">
+            <h1>Agent Detail</h1>
+            <ul class="breadcrumbs">
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li class="active">Agent Detail</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- Sub Banner end -->
+
+<!-- Agent page start -->
+<div class="agent-page content-area">
+    <div class="container">
+        <!-- Heading -->
+        <h1 class="heading-2">Agent Details</h1>
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="row team-2">
+                    <div class="col-xl-5 col-lg-6 col-md-5 col-sm-12 col-pad">
+                        <div class="photo clip-home">
+                            <img src="{{agent.photo.url}}" alt="" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="col-xl-7 col-lg-6 col-md-7 col-sm-12 col-pad bg align-self-center">
+                        <div class="detail">
+                            <h4>
+                                <a href="{% url 'agent' agent.id%}">{{agent.name}}</a>
+                            </h4>
+                            <h5>{{agent.occupation}}</h5>
+                            <div class="contact">
+                                <ul>
+                                    <li>
+                                        <i class="flaticon-pin"></i><a>{{agent.address}}</a>
+                                    </li>
+                                    <li>
+                                        <i class="flaticon-mail"></i><a href="mailto:{{agent.email}}">{{agent.email}}</a>
+                                    </li>
+                                    <li>
+                                        <i class="flaticon-phone"></i><a href="tel:+{{agent.phone}}"> +{{agent.phone}}</a>
+                                    </li>
+                                    {% if agent.landline %}
+                                        <li>
+                                            <i class="flaticon-fax"></i><a href="#"> +{{agent.landline}}</a>
+                                        </li>
+                                    {% endif %}
+                                </ul>
+                            </div>
+
+                            <ul class="social-list clearfix">
+                                <li><a href="{{agent.facebook}}" class="facebook-bg"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="{{agent.twitter}}" class="twitter-bg"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="{{agent.google}}" class="google-bg"><i class="fa fa-google-plus"></i></a></li>
+                                <li><a href="{{agent.linkedin}}" class="linkedin-bg"><i class="fa fa-linkedin"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="agent-biography">
+                    <h3 class="heading-2">Biography</h3>
+                    <p>{{agent.biography}}</p>
+                    <br>
+                </div>
+               
+            </div>
+            
+        </div>
+    </div>
+</div>
+<!-- Agent page end -->
+
+{% endblock %}

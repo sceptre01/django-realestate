@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- Sub banner start -->
+<div class="sub-banner">
+    <div class="container">
+        <div class="breadcrumb-area">
+            <h1>Agents List</h1>
+            <ul class="breadcrumbs">
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li class="active">Agents List</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- Sub Banner end -->
+
+<!-- Our team start -->
+<div class="our-team content-area">
+    <div class="container">
+        <div class="row">
+            {% if agents %}
+                {% for agent in agents %}
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="team-4">
+                            <div class="team-photo">
+                                <img src="{{ agent.photo.url }}" alt="agent-2" class="img-fluid">
+                                <div class="social-list clip-home">
+                                    <a href="{{agent.facebook}}" class="facebook-bg"><i class="fa fa-facebook"></i></a>
+                                    <a href="{{agent.twitter}}" class="twitter-bg"><i class="fa fa-twitter"></i></a>
+                                    <a href="{{agent.google}}" class="google-bg"><i class="fa fa-google"></i></a>
+                                </div>
+                            </div>
+                            <div class="team-details">
+                                <h6>{{agent.occupation}}</h6>
+                                <h5><a href="{% url 'agent' agent.id %}">{{agent.name}}</a></h5>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <div class="col-md-12">
+                    <p>No Agents Available</p>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+<!-- Our team end -->
+
+{% endblock %}

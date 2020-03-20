@@ -1754,6 +1754,7 @@ input[type=checkbox]:checked + label:before {
     padding: 0;
 }
 
+
 .bootstrap-select .dropdown-menu li a {
     padding: 10px;
 }
