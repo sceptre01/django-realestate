@@ -64,7 +64,7 @@ $(function () {
                     $('.sticky-header').addClass('header-shrink');
                 }
                 if($('.do-sticky').length < 1) {
-                    $('.logo img').attr('src', 'img/logos/black-logo.png');
+                    $('.logo img').attr('src', 'static/img/logos/black-logo.png');
                 }
             }
             else {
@@ -435,3 +435,7 @@ $(function () {
         }
     }).trigger("resize");
 })(jQuery);
+
+setTimeout(function() {
+    $('#message').fadeOut('slow');
+}, 3000);

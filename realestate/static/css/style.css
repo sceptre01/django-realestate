@@ -6095,7 +6095,8 @@ footer {
     padding: 30px 30px 0;
     position: relative;
     z-index: 10;
-    margin-left: 280px;
+    margin: 50px;
+    margin-top: -75px;
     width: 100%;
 }
 

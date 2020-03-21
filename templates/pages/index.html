@@ -2,6 +2,8 @@
 {% load static %}
 {% load humanize %}
 
+{% block title%} | Welcome {% endblock%}
+
 {% block content %}
 <!-- Banner start -->
 <div class="banner" id="banner">
@@ -125,7 +127,8 @@
         </a>
     </div>
 </div>
-
+<br>
+{% include 'partials/_alerts.html' %}
 <!-- Search Section start -->
 <div class="search-section search-area pb-hediin-12 bg-grea animated fadeInDown" id="search-style-1">
     <div class="container">
@@ -189,6 +192,7 @@
 <!-- Search Section end -->
 
 <!-- Featured Properties start -->
+
 <div class="featured-properties content-area">
     <div class="container">
         <!-- Main title -->
