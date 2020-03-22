@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'properties.apps.PropertiesConfig',
     'agents.apps.AgentsConfig',
     'accounts.apps.AccountsConfig',
+    'contacts.apps.ContactsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -83,7 +84,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'realestatedb',
         'USER': 'postgres',
-        'PASSWORD': 'darktimes123',
+        'PASSWORD': 'password',
         'HOST': 'localhost'
     }
 }

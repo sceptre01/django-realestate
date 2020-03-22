@@ -6036,6 +6036,7 @@ footer {
 /** Dashboard nav start **/
 .dashboard{
     position: relative;
+    margin-bottom: 50px;
 }
 
 .fixed-header{
