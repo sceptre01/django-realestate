@@ -21,7 +21,7 @@ $ python manage.py runserver
 ## Demo
 [https://sceptre01-realestate.herokuapp.com](https://sceptre01-realestate.herokuapp.com)
 
-[https://sceptre01-realestate.herokuapp.com/admin](Admin-Dashboard)
+[https://sceptre01-realestate.herokuapp.com/admin](https://sceptre01-realestate.herokuapp.com/admin)
 (admin:admin)
 
 ## Features
